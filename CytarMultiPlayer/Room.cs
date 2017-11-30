@@ -10,6 +10,8 @@ namespace CytarMultiPlayer
     {
         public const string APIGetRoomsID = "GRID";
         public const string APIGetRooms = "GTRM";
+        public const string APIEnterRoom = "ENRM";
+        public const string APIExitRoom = "EXRM";
         [SerializableProperty(1)]
         public string Name { get; set; }
 
@@ -67,6 +69,24 @@ namespace CytarMultiPlayer
         public Room[] GetSubRooms()
         {
             return SubRooms.Values.ToArray();
+        }
+
+        [CytarAPI(APIEnterRoom)]
+        public void EnterRoom(CytarMPSession session,uint id)
+        {
+            if (!SubRooms.ContainsKey(id))
+                throw new Exception("Room Not Found");
+
+            session.Exit(this);
+            session.Join(SubRooms[id]);            
+        }
+        [CytarAPI(APIExitRoom)]
+        public void ExitRoom(CytarMPSession session)
+        {
+            session.Exit(this);
+            if (this.Parent == null)
+                session.Close(0);
+            session.Join(this.Parent);
         }
     }
 }
