@@ -8,6 +8,11 @@ namespace CytarMultiPlayer
 {
     public class CytarMPSession : Cytar.Session
     {
+
+        public CytarMPSession(NetworkSession netSession) : base(netSession)
+        {
+        }
+
         public User User { get; set; }
 
         public new NetworkSession NetworkSession

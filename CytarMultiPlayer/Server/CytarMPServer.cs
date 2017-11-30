@@ -36,11 +36,13 @@ namespace CytarMultiPlayer.Server
 
         public void UseAuthenticate(Func<string, byte[], bool> authCallback)
         {
+            AuthAPIContext = new AuthAPIContext(this);
             AuthCallback = authCallback;
         }
 
         public void UseAuthenticate(Func<string, bool> authCallback)
         {
+            AuthAPIContext = new AuthAPIContext(this);
             AuthCallback = (uid, pwdData) =>
             {
                 return authCallback(uid);

@@ -11,6 +11,12 @@ namespace CytarMultiPlayer.Client
         public CytarMPClient(Protocol protocol, string host, int port) : base(protocol, host, port)
         {
         }
-        
+
+        public new CytarMPSession Connect()
+        {
+            return base.Connect<CytarMPSession>();
+        }
+
+
     }
 }
