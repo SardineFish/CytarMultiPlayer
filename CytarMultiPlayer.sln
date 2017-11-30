@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CytarMultiPlayer", "CytarMultiPlayer\CytarMultiPlayer.csproj", "{BA9958C2-3315-41AF-9B3A-AA89C9288205}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cytar", "Cytar\Cytar\Cytar.csproj", "{CA00207F-B228-4CAF-8351-E5A665757CE1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyRoute", "Cytar\EasyRoute\EasyRoute\EasyRoute.csproj", "{AE6105DC-A02C-41A6-A25A-239558C10756}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA9958C2-3315-41AF-9B3A-AA89C9288205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA9958C2-3315-41AF-9B3A-AA89C9288205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA9958C2-3315-41AF-9B3A-AA89C9288205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA9958C2-3315-41AF-9B3A-AA89C9288205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA00207F-B228-4CAF-8351-E5A665757CE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA00207F-B228-4CAF-8351-E5A665757CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA00207F-B228-4CAF-8351-E5A665757CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA00207F-B228-4CAF-8351-E5A665757CE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE6105DC-A02C-41A6-A25A-239558C10756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE6105DC-A02C-41A6-A25A-239558C10756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE6105DC-A02C-41A6-A25A-239558C10756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE6105DC-A02C-41A6-A25A-239558C10756}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BA084A0-79B0-4105-8C6F-62AD8443F1D9}
+	EndGlobalSection
+EndGlobal
