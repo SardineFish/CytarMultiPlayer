@@ -17,7 +17,7 @@ namespace ChatClient
                 LoginAgin:
                 Console.Write("Your Name: ");
                 var name = Console.ReadLine();
-                CytarMPClient client = new CytarMPClient(Cytar.Protocol.TCP, "server.sardinefish.com", 36152);
+                CytarMPClient client = new CytarMPClient(Cytar.Protocol.TCP, "127.0.0.1", 36152);
                 var session = client.Connect();
                 var loginSucceed = await session.CallRemoteAPIAsync<bool>(CytarMultiPlayer.AuthAPIContext.AuthAPIName, name,new byte[0] );
                 if (!loginSucceed)

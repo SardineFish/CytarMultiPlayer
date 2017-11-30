@@ -13,16 +13,29 @@ namespace ChatServer
         static void Main(string[] args)
         {
             CytarMPServer server = new CytarMPServer();
-            server.UseTCP("127.0.0.1", 36152);
+            server.UseTCP("server.sardinefish.com", 36152);
             server.UseAuthenticate((uid) =>
             {
                 if (uid.ToLower().Contains("dark"))
                     return false;
                 return true;
             });
-            server.RootRoom = new ChattingRoom();
+            ChattingRoom chattingRoom = new ChattingRoom();
+            server.RootRoom = chattingRoom;
             server.Start();
+            server.WaitSession((session) =>
+            {
+                chattingRoom.Say("Server", "A user [" + session.User.Name + "] entered the room.");
+                session.Error += Session_Error;
+            });
             
+        }
+
+        private static void Session_Error(Cytar.Session arg1, string arg2)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(arg2);
+            Console.ForegroundColor = ConsoleColor.Gray;
         }
     }
 }

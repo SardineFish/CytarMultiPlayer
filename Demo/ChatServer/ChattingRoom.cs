@@ -13,10 +13,20 @@ namespace ChatServer
         [CytarAPI("Say")]
         public void Say(CytarMPSession session,string text)
         {
-            foreach(var target in Sessions)
+            Say(session.User.Name, text);
+        }
+
+        public void Say(string name,string text)
+        {
+            foreach (var target in Sessions)
             {
-                target.CallRemoteAPI("RcvMsg", session.User.Name, DateTime.Now.ToLongTimeString(), text);
+                target.CallRemoteAPI("RcvMsg", name, DateTime.Now.ToLongTimeString(), text);
             }
+        }
+
+        public override void OnSessionExit(Session session)
+        {
+            Say("Server", "The user [" + (session as CytarMPSession).User.Name + "] has left the room.");
         }
     }
 }
