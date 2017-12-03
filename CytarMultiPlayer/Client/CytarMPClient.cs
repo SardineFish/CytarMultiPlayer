@@ -4,7 +4,7 @@ using System.Text;
 using Cytar;
 using Cytar.Network;
 
-namespace CytarMultiPlayer.Client
+namespace CytarMultiPlayer
 {
     public class CytarMPClient : CytarClient
     {

@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace CytarMultiPlayer
 {
-    public class Room: APIContext
+    public class Room<SubRoomT>: APIContext where SubRoomT: Room<SubRoomT>
     {
         public const string APIGetRoomsID = "GRID";
         public const string APIGetRooms = "GTRM";
@@ -20,7 +20,7 @@ namespace CytarMultiPlayer
 
         [SerializableProperty(0)]
         public new uint ID { get =>base.ID; protected set => base.ID = value; }
-        public Dictionary<uint,Room> SubRooms { get; protected set; }
+        public Dictionary<uint, SubRoomT> SubRooms { get; protected set; }
 
         public Room():this("Room","A Room.")
         {
@@ -31,16 +31,16 @@ namespace CytarMultiPlayer
             this.ID = IDRegister.NextID;
             Name = name;
             Description = description;
-            SubRooms = new Dictionary<uint, Room>();
+            SubRooms = new Dictionary<uint, SubRoomT>();
         }
 
-        public void AddSubRoom(Room room)
+        public virtual void AddSubRoom(SubRoomT room)
         {
             this.Children.Add(room);
             Children.Add(room);
         }
 
-        public bool RemoveSubRoom(Room room)
+        public virtual bool RemoveSubRoom(SubRoomT room)
         {
             if (!SubRooms.ContainsValue(room))
                 return false;
@@ -49,7 +49,7 @@ namespace CytarMultiPlayer
             return true;
         }
 
-        public bool RemoveSubRoom(uint id)
+        public virtual bool RemoveSubRoom(uint id)
         {
             var room = SubRooms[id];
             if (room == null)
@@ -60,13 +60,13 @@ namespace CytarMultiPlayer
         }
 
         [CytarAPI(APIGetRoomsID)]
-        public uint[] GetSubRoomsID()
+        public virtual uint[] GetSubRoomsID()
         {
             return SubRooms.Keys.ToArray();
         }
 
         [CytarAPI(APIGetRooms)]
-        public Room[] GetSubRooms()
+        public SubRoomT[] GetSubRooms()
         {
             return SubRooms.Values.ToArray();
         }

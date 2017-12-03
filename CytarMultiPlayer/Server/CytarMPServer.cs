@@ -4,7 +4,7 @@ using System.Text;
 using Cytar;
 using Cytar.Network;
 
-namespace CytarMultiPlayer.Server
+namespace CytarMultiPlayer
 {
     public class CytarMPServer
     {
@@ -19,7 +19,7 @@ namespace CytarMultiPlayer.Server
 
         public AuthAPIContext AuthAPIContext { get; set; }
         
-        public Room RootRoom { get; set; }
+        public APIContext RootRoom { get; set; }
 
         internal Func<string, byte[], bool> AuthCallback;
 
