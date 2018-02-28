@@ -8,4 +8,14 @@
     <ProjectReference Include="..\Cytar\Cytar\Cytar.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Lib\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>Lib\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -15,11 +15,15 @@ namespace ChatClient
             Task.Run(async () =>
             {
                 LoginAgin:
+
                 Console.Write("Your Name: ");
                 var name = Console.ReadLine();
-                CytarMPClient client = new CytarMPClient(Cytar.Protocol.TCP, "127.0.0.1", 36152);
+
+                CytarMPClient client = new CytarMPClient(Cytar.Protocol.TCP, "server.sardinefish.com", 36152);
                 var session = client.Connect();
-                var loginSucceed = await session.CallRemoteAPIAsync<bool>(CytarMultiPlayer.AuthAPIContext.AuthAPIName, name,new byte[0] );
+
+                var loginSucceed = await session.CallRemoteAPIAsync<bool>("AUTH", name,new byte[0]);
+
                 if (!loginSucceed)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -27,7 +31,9 @@ namespace ChatClient
                     Console.ForegroundColor = ConsoleColor.Gray;
                     goto LoginAgin;
                 }
+
                 session.Join(new ChattingRoom());
+
                 while (true)
                 {
                     var text = Console.ReadLine();
