@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CytarMultiPlayer", "CytarMultiPlayer\CytarMultiPlayer.csproj", "{BA9958C2-3315-41AF-9B3A-AA89C9288205}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CytarMultiPlayer", "CytarMultiPlayer\CytarMultiPlayer.csproj", "{BA9958C2-3315-41AF-9B3A-AA89C9288205}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cytar", "Cytar\Cytar\Cytar.csproj", "{CA00207F-B228-4CAF-8351-E5A665757CE1}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServer", "Demo\ChatServer\ChatServer.csproj", "{2AFA66FA-C2F1-46B4-83CD-31FB09842D09}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatClient", "Demo\ChatClient\ChatClient.csproj", "{69E76390-E6E9-4AEE-9460-FED767D59FAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cytar-Unity", "Cytar\Cytar-Unity\Cytar-Unity.csproj", "{6C7EF7C4-BBAC-423B-BF81-1359D170EA52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{69E76390-E6E9-4AEE-9460-FED767D59FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69E76390-E6E9-4AEE-9460-FED767D59FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69E76390-E6E9-4AEE-9460-FED767D59FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C7EF7C4-BBAC-423B-BF81-1359D170EA52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C7EF7C4-BBAC-423B-BF81-1359D170EA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C7EF7C4-BBAC-423B-BF81-1359D170EA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C7EF7C4-BBAC-423B-BF81-1359D170EA52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
