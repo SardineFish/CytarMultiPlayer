@@ -6,15 +6,10 @@ using Cytar.Network;
 
 namespace CytarMultiPlayer.Client
 {
-    public class CytarMPClient : CytarClient
+    public class CytarMPClient : CytarClient<CytarMPSession>
     {
-        public CytarMPClient(Protocol protocol, string host, int port) : base(protocol, host, port)
+        public CytarMPClient() : base()
         {
-        }
-
-        public new CytarMPSession Connect()
-        {
-            return base.Connect<CytarMPSession>();
         }
 
 

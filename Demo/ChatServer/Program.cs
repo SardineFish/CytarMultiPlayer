@@ -13,7 +13,7 @@ namespace ChatServer
         static void Main(string[] args)
         {
             CytarMPServer server = new CytarMPServer();
-            server.UseTCP("server.sardinefish.com", 36152);
+            server.UseTCP("localhost", 36152);
             server.UseAuthenticate((uid) =>
             {
                 if (uid.ToLower().Contains("dark"))

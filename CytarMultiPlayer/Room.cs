@@ -76,7 +76,7 @@ namespace CytarMultiPlayer
         {
             if (!SubRooms.ContainsKey(id))
                 throw new Exception("Room Not Found");
-
+            OnSessionExit(session);
             session.Exit(this);
             session.Join(SubRooms[id]);            
         }
@@ -84,9 +84,16 @@ namespace CytarMultiPlayer
         public void ExitRoom(CytarMPSession session)
         {
             session.Exit(this);
+            OnSessionExit(session);
             if (this.Parent == null)
                 session.Close(0);
             session.Join(this.Parent);
+
+        }
+
+        public virtual void OnSessionExit(Session session)
+        {
+
         }
     }
 }
