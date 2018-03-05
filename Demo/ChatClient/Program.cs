@@ -20,7 +20,8 @@ namespace ChatClient
                 var name = Console.ReadLine();
 
                 CytarMPClient client = new CytarMPClient();
-                var session = client.Connect<Cytar.Network.TCPSession>("localhost", 36152);
+                var session = client.Connect<Cytar.Unity.Network.UnitySession>("localhost", 36152);
+                session.Start();
 
                 var loginSucceed = await session.CallRemoteAPIAsync<bool>("AUTH", name,new byte[0]);
 

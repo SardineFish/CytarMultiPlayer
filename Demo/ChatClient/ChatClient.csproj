@@ -54,6 +54,10 @@
       <Project>{ba9958c2-3315-41af-9b3a-aa89c9288205}</Project>
       <Name>CytarMultiPlayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Cytar\Cytar-Unity\Cytar-Unity.csproj">
+      <Project>{6c7ef7c4-bbac-423b-bf81-1359d170ea52}</Project>
+      <Name>Cytar-Unity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Cytar\Cytar\Cytar.csproj">
       <Project>{CA00207F-B228-4CAF-8351-E5A665757CE1}</Project>
       <Name>Cytar</Name>

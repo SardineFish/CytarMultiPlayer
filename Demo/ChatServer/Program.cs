@@ -13,7 +13,7 @@ namespace ChatServer
         static void Main(string[] args)
         {
             CytarMPServer server = new CytarMPServer();
-            server.UseTCP("localhost", 36152);
+            server.Use<Cytar.Unity.Network.UnityServer>("loclahost", 36152);
             server.UseAuthenticate((uid) =>
             {
                 if (uid.ToLower().Contains("dark"))

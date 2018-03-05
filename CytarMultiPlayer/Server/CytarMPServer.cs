@@ -34,6 +34,11 @@ namespace CytarMultiPlayer.Server
 
         }
 
+        public void Use<CytarNetworkServerT>(string host,int port) where CytarNetworkServerT:CytarNetworkServer
+        {
+            CytarServer.UseProtocol<CytarNetworkServerT>(host, port);
+        }
+
         public void UseAuthenticate(Func<string, byte[], bool> authCallback)
         {
             AuthAPIContext = new AuthAPIContext(this);
